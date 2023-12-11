@@ -28,9 +28,9 @@ type MembersApiService service
 /*
 MembersApiService Aggregate member
 Calling this endpoint initiates an aggregation event for the member. This brings in the latest account and transaction data from the connected institution. If this data has recently been updated, MX may not initiate an aggregation event.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param memberGUID The unique identifier for a &#x60;member&#x60;.
- * @param userGUID The unique identifier for a &#x60;user&#x60;.
+  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param memberGUID The unique identifier for a &#x60;member&#x60;.
+  - @param userGUID The unique identifier for a &#x60;user&#x60;.
 
 @return MemberResponseBody
 */
@@ -62,7 +62,7 @@ func (a *MembersApiService) AggregateMember(ctx context.Context, memberGUID stri
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/vnd.mx.atrium.v1+json"}
+	localVarHttpHeaderAccepts := []string{"application/vnd.mx.api.v1+json"}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -145,9 +145,9 @@ func (a *MembersApiService) AggregateMember(ctx context.Context, memberGUID stri
 /*
 MembersApiService Aggregate member account balances
 This endpoint operates much like the _aggregate member_ endpoint except that it gathers only account balance information; it does not gather any transaction data at all.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param memberGUID The unique identifier for a &#x60;member&#x60;.
- * @param userGUID The unique identifier for a &#x60;user&#x60;.
+  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param memberGUID The unique identifier for a &#x60;member&#x60;.
+  - @param userGUID The unique identifier for a &#x60;user&#x60;.
 
 @return MemberResponseBody
 */
@@ -179,7 +179,7 @@ func (a *MembersApiService) AggregateMemberBalances(ctx context.Context, memberG
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/vnd.mx.atrium.v1+json"}
+	localVarHttpHeaderAccepts := []string{"application/vnd.mx.api.v1+json"}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -262,9 +262,9 @@ func (a *MembersApiService) AggregateMemberBalances(ctx context.Context, memberG
 /*
 MembersApiService Create member
 This endpoint allows you to create a new member. Members are created with the required parameters credentials and institution_code, and the optional parameters identifier and metadata.&lt;br&gt; When creating a member, you&#39;ll need to include the correct type of credential required by the financial institution and provided by the user. You can find out which credential type is required with the /institutions/{institution_code}/credentials endpoint.&lt;br&gt; If successful, Atrium will respond with the newly-created member object.&lt;br&gt; Once you successfully create a member, MX will immediately validate the provided credentials and attempt to aggregate data for accounts and transactions.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param userGUID The unique identifier for a &#x60;user&#x60;.
- * @param body Member object to be created with optional parameters (identifier and metadata) and required parameters (credentials and institution_code)
+  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param userGUID The unique identifier for a &#x60;user&#x60;.
+  - @param body Member object to be created with optional parameters (identifier and metadata) and required parameters (credentials and institution_code)
 
 @return MemberResponseBody
 */
@@ -295,7 +295,7 @@ func (a *MembersApiService) CreateMember(ctx context.Context, userGUID string, b
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/vnd.mx.atrium.v1+json"}
+	localVarHttpHeaderAccepts := []string{"application/vnd.mx.api.v1+json"}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -380,11 +380,9 @@ func (a *MembersApiService) CreateMember(ctx context.Context, userGUID string, b
 /*
 MembersApiService Delete member
 Accessing this endpoint will permanently delete a member.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param memberGUID The unique identifier for a &#x60;member&#x60;.
- * @param userGUID The unique identifier for a &#x60;user&#x60;.
-
-
+  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param memberGUID The unique identifier for a &#x60;member&#x60;.
+  - @param userGUID The unique identifier for a &#x60;user&#x60;.
 */
 func (a *MembersApiService) DeleteMember(ctx context.Context, memberGUID string, userGUID string) (*http.Response, error) {
 	var (
@@ -413,7 +411,7 @@ func (a *MembersApiService) DeleteMember(ctx context.Context, memberGUID string,
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/vnd.mx.atrium.v1+json"}
+	localVarHttpHeaderAccepts := []string{"application/vnd.mx.api.v1+json"}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -477,9 +475,9 @@ func (a *MembersApiService) DeleteMember(ctx context.Context, memberGUID string,
 /*
 MembersApiService Extend history
 The extend_history endpoint begins the process of fetching up to 24 months of data associated with a particular &#x60;member&#x60;.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param memberGUID The unique identifier for a &#x60;member&#x60;.
- * @param userGUID The unique identifier for a &#x60;user&#x60;.
+  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param memberGUID The unique identifier for a &#x60;member&#x60;.
+  - @param userGUID The unique identifier for a &#x60;user&#x60;.
 
 @return MemberResponseBody
 */
@@ -511,7 +509,7 @@ func (a *MembersApiService) ExtendHistory(ctx context.Context, memberGUID string
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/vnd.mx.atrium.v1+json"}
+	localVarHttpHeaderAccepts := []string{"application/vnd.mx.api.v1+json"}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -643,7 +641,7 @@ func (a *MembersApiService) ListMemberAccounts(ctx context.Context, memberGUID s
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/vnd.mx.atrium.v1+json"}
+	localVarHttpHeaderAccepts := []string{"application/vnd.mx.api.v1+json"}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -726,9 +724,9 @@ func (a *MembersApiService) ListMemberAccounts(ctx context.Context, memberGUID s
 /*
 MembersApiService List member credentials
 This endpoint returns an array which contains information on every non-MFA credential associated with a specific member.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param memberGUID The unique identifier for a &#x60;member&#x60;.
- * @param userGUID The unique identifier for a &#x60;user&#x60;.
+  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param memberGUID The unique identifier for a &#x60;member&#x60;.
+  - @param userGUID The unique identifier for a &#x60;user&#x60;.
 
 @return CredentialsResponseBody
 */
@@ -760,7 +758,7 @@ func (a *MembersApiService) ListMemberCredentials(ctx context.Context, memberGUI
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/vnd.mx.atrium.v1+json"}
+	localVarHttpHeaderAccepts := []string{"application/vnd.mx.api.v1+json"}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -843,9 +841,9 @@ func (a *MembersApiService) ListMemberCredentials(ctx context.Context, memberGUI
 /*
 MembersApiService List member MFA challenges
 Use this endpoint for information on what multi-factor authentication challenges need to be answered in order to aggregate a member.&lt;br&gt; If the aggregation is not challenged, i.e., the member does not have a connection status of CHALLENGED, then code 204 No Content will be returned.&lt;br&gt; If the aggregation has been challenged, i.e., the member does have a connection status of CHALLENGED, then code 200 OK will be returned — along with the corresponding credentials.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param memberGUID The unique identifier for a &#x60;member&#x60;.
- * @param userGUID The unique identifier for a &#x60;user&#x60;.
+  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param memberGUID The unique identifier for a &#x60;member&#x60;.
+  - @param userGUID The unique identifier for a &#x60;user&#x60;.
 
 @return ChallengesResponseBody
 */
@@ -877,7 +875,7 @@ func (a *MembersApiService) ListMemberMFAChallenges(ctx context.Context, memberG
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/vnd.mx.atrium.v1+json"}
+	localVarHttpHeaderAccepts := []string{"application/vnd.mx.api.v1+json"}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1019,7 +1017,7 @@ func (a *MembersApiService) ListMemberTransactions(ctx context.Context, memberGU
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/vnd.mx.atrium.v1+json"}
+	localVarHttpHeaderAccepts := []string{"application/vnd.mx.api.v1+json"}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1149,7 +1147,7 @@ func (a *MembersApiService) ListMembers(ctx context.Context, userGUID string, lo
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/vnd.mx.atrium.v1+json"}
+	localVarHttpHeaderAccepts := []string{"application/vnd.mx.api.v1+json"}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1232,9 +1230,9 @@ func (a *MembersApiService) ListMembers(ctx context.Context, userGUID string, lo
 /*
 MembersApiService Read member
 Use this endpoint to read the attributes of a specific member.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param memberGUID The unique identifier for a &#x60;member&#x60;.
- * @param userGUID The unique identifier for a &#x60;user&#x60;.
+  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param memberGUID The unique identifier for a &#x60;member&#x60;.
+  - @param userGUID The unique identifier for a &#x60;user&#x60;.
 
 @return MemberResponseBody
 */
@@ -1266,7 +1264,7 @@ func (a *MembersApiService) ReadMember(ctx context.Context, memberGUID string, u
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/vnd.mx.atrium.v1+json"}
+	localVarHttpHeaderAccepts := []string{"application/vnd.mx.api.v1+json"}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1349,9 +1347,9 @@ func (a *MembersApiService) ReadMember(ctx context.Context, memberGUID string, u
 /*
 MembersApiService Read member connection status
 This endpoint provides the status of the member&#39;s most recent aggregation event. This is an important step in the aggregation process, and the results returned by this endpoint should determine what you do next in order to successfully aggregate a member.&lt;br&gt; MX has introduced new, more detailed information on the current status of a member&#39;s connection to a financial institution and the state of its aggregation: the connection_status field. These are intended to replace and expand upon the information provided in the status field, which will soon be deprecated; support for the status field remains for the time being.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param memberGUID The unique identifier for a &#x60;member&#x60;.
- * @param userGUID The unique identifier for a &#x60;user&#x60;.
+  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param memberGUID The unique identifier for a &#x60;member&#x60;.
+  - @param userGUID The unique identifier for a &#x60;user&#x60;.
 
 @return MemberConnectionStatusResponseBody
 */
@@ -1383,7 +1381,7 @@ func (a *MembersApiService) ReadMemberStatus(ctx context.Context, memberGUID str
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/vnd.mx.atrium.v1+json"}
+	localVarHttpHeaderAccepts := []string{"application/vnd.mx.api.v1+json"}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1515,7 +1513,7 @@ func (a *MembersApiService) ReadOAuthWindowURI(ctx context.Context, memberGUID s
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/vnd.mx.atrium.v1+json"}
+	localVarHttpHeaderAccepts := []string{"application/vnd.mx.api.v1+json"}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1598,10 +1596,10 @@ func (a *MembersApiService) ReadOAuthWindowURI(ctx context.Context, memberGUID s
 /*
 MembersApiService Resume aggregation from MFA
 This endpoint answers the challenges needed when a member has been challenged by multi-factor authentication.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param memberGUID The unique identifier for a &#x60;member&#x60;.
- * @param userGUID The unique identifier for a &#x60;user&#x60;.
- * @param body Member object with MFA challenge answers
+  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param memberGUID The unique identifier for a &#x60;member&#x60;.
+  - @param userGUID The unique identifier for a &#x60;user&#x60;.
+  - @param body Member object with MFA challenge answers
 
 @return MemberResponseBody
 */
@@ -1633,7 +1631,7 @@ func (a *MembersApiService) ResumeMember(ctx context.Context, memberGUID string,
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/vnd.mx.atrium.v1+json"}
+	localVarHttpHeaderAccepts := []string{"application/vnd.mx.api.v1+json"}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -1759,7 +1757,7 @@ func (a *MembersApiService) UpdateMember(ctx context.Context, memberGUID string,
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/vnd.mx.atrium.v1+json"}
+	localVarHttpHeaderAccepts := []string{"application/vnd.mx.api.v1+json"}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)

@@ -28,8 +28,8 @@ type TransactionsApiService service
 /*
 TransactionsApiService Categorize transactions
 Use this endpoint to categorize, cleanse, and classify transactions. These transactions are not persisted or stored on the MX platform.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param body User object to be created with optional parameters (amount, type) amd required parameters (description, identifier)
+  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param body User object to be created with optional parameters (amount, type) amd required parameters (description, identifier)
 
 @return TransactionsCleanseAndCategorizeResponseBody
 */
@@ -59,7 +59,7 @@ func (a *TransactionsApiService) CleanseAndCategorizeTransactions(ctx context.Co
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/vnd.mx.atrium.v1+json"}
+	localVarHttpHeaderAccepts := []string{"application/vnd.mx.api.v1+json"}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -201,7 +201,7 @@ func (a *TransactionsApiService) ListUserTransactions(ctx context.Context, userG
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/vnd.mx.atrium.v1+json"}
+	localVarHttpHeaderAccepts := []string{"application/vnd.mx.api.v1+json"}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -284,9 +284,9 @@ func (a *TransactionsApiService) ListUserTransactions(ctx context.Context, userG
 /*
 TransactionsApiService Read a transaction
 This endpoint allows you to view information about a specific transaction that belongs to a user.&lt;br&gt;
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param transactionGUID The unique identifier for a &#x60;transaction&#x60;.
- * @param userGUID The unique identifier for a &#x60;user&#x60;.
+  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param transactionGUID The unique identifier for a &#x60;transaction&#x60;.
+  - @param userGUID The unique identifier for a &#x60;user&#x60;.
 
 @return TransactionResponseBody
 */
@@ -318,7 +318,7 @@ func (a *TransactionsApiService) ReadTransaction(ctx context.Context, transactio
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/vnd.mx.atrium.v1+json"}
+	localVarHttpHeaderAccepts := []string{"application/vnd.mx.api.v1+json"}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)

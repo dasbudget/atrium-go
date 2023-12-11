@@ -27,9 +27,9 @@ type IdentityApiService service
 /*
 IdentityApiService Identify
 The identify endpoint begins an identification process for an already-existing member.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param memberGUID The unique identifier for a &#x60;member&#x60;.
- * @param userGUID The unique identifier for a &#x60;user&#x60;.
+  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param memberGUID The unique identifier for a &#x60;member&#x60;.
+  - @param userGUID The unique identifier for a &#x60;user&#x60;.
 
 @return MemberResponseBody
 */
@@ -61,7 +61,7 @@ func (a *IdentityApiService) IdentifyMember(ctx context.Context, memberGUID stri
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/vnd.mx.atrium.v1+json"}
+	localVarHttpHeaderAccepts := []string{"application/vnd.mx.api.v1+json"}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -144,9 +144,9 @@ func (a *IdentityApiService) IdentifyMember(ctx context.Context, memberGUID stri
 /*
 IdentityApiService List member account owners
 This endpoint returns an array with information about every account associated with a particular member.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param memberGUID The unique identifier for a &#x60;member&#x60;.
- * @param userGUID The unique identifier for a &#x60;user&#x60;.
+  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param memberGUID The unique identifier for a &#x60;member&#x60;.
+  - @param userGUID The unique identifier for a &#x60;user&#x60;.
 
 @return AccountOwnersResponseBody
 */
@@ -178,7 +178,7 @@ func (a *IdentityApiService) ListAccountOwners(ctx context.Context, memberGUID s
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/vnd.mx.atrium.v1+json"}
+	localVarHttpHeaderAccepts := []string{"application/vnd.mx.api.v1+json"}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)

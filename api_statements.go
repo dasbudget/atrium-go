@@ -29,10 +29,10 @@ type StatementsApiService service
 /*
 StatementsApiService Download statement PDF
 Use this endpoint to download a specified statement. The endpoint URL is the same as the URI given in each &#x60;statement&#x60; object.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param memberGUID The unique identifier for a &#x60;member&#x60;.
- * @param userGUID The unique identifier for a &#x60;user&#x60;.
- * @param statementGUID The unique identifier for an &#x60;statement&#x60;.
+  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param memberGUID The unique identifier for a &#x60;member&#x60;.
+  - @param userGUID The unique identifier for a &#x60;user&#x60;.
+  - @param statementGUID The unique identifier for an &#x60;statement&#x60;.
 
 @return *os.File
 */
@@ -148,9 +148,9 @@ func (a *StatementsApiService) DownloadStatementPdf(ctx context.Context, memberG
 /*
 StatementsApiService Fetch statements
 The fetch statements endpoint begins fetching statements for a member.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param memberGUID The unique identifier for a &#x60;member&#x60;.
- * @param userGUID The unique identifier for a &#x60;user&#x60;.
+  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param memberGUID The unique identifier for a &#x60;member&#x60;.
+  - @param userGUID The unique identifier for a &#x60;user&#x60;.
 
 @return MemberResponseBody
 */
@@ -182,7 +182,7 @@ func (a *StatementsApiService) FetchStatements(ctx context.Context, memberGUID s
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/vnd.mx.atrium.v1+json"}
+	localVarHttpHeaderAccepts := []string{"application/vnd.mx.api.v1+json"}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -314,7 +314,7 @@ func (a *StatementsApiService) ListMemberStatements(ctx context.Context, memberG
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/vnd.mx.atrium.v1+json"}
+	localVarHttpHeaderAccepts := []string{"application/vnd.mx.api.v1+json"}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -397,10 +397,10 @@ func (a *StatementsApiService) ListMemberStatements(ctx context.Context, memberG
 /*
 StatementsApiService Read statement JSON
 Use this endpoint to download a specified statement. The endpoint URL is the same as the URI given in each &#x60;statement&#x60; object.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param memberGUID The unique identifier for a &#x60;member&#x60;.
- * @param userGUID The unique identifier for a &#x60;user&#x60;.
- * @param statementGUID The unique identifier for an &#x60;statement&#x60;.
+  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param memberGUID The unique identifier for a &#x60;member&#x60;.
+  - @param userGUID The unique identifier for a &#x60;user&#x60;.
+  - @param statementGUID The unique identifier for an &#x60;statement&#x60;.
 
 @return StatementResponseBody
 */
@@ -433,7 +433,7 @@ func (a *StatementsApiService) ReadMemberStatement(ctx context.Context, memberGU
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/vnd.mx.atrium.v1+json"}
+	localVarHttpHeaderAccepts := []string{"application/vnd.mx.api.v1+json"}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)

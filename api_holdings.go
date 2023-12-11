@@ -27,8 +27,8 @@ type HoldingsApiService service
 /*
 HoldingsApiService List holdings
 Use this endpoint to read all holdings associated with a specific user.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param userGUID The unique identifier for a &#x60;user&#x60;.
+  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param userGUID The unique identifier for a &#x60;user&#x60;.
 
 @return HoldingsResponseBody
 */
@@ -59,7 +59,7 @@ func (a *HoldingsApiService) ListHoldings(ctx context.Context, userGUID string) 
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/vnd.mx.atrium.v1+json"}
+	localVarHttpHeaderAccepts := []string{"application/vnd.mx.api.v1+json"}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -142,9 +142,9 @@ func (a *HoldingsApiService) ListHoldings(ctx context.Context, userGUID string) 
 /*
 HoldingsApiService List holdings by account
 Use this endpoint to read all holdings associated with a specific account.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param accountGUID The unique identifier for an &#x60;account&#x60;.
- * @param userGUID The unique identifier for a &#x60;user&#x60;.
+  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param accountGUID The unique identifier for an &#x60;account&#x60;.
+  - @param userGUID The unique identifier for a &#x60;user&#x60;.
 
 @return HoldingsResponseBody
 */
@@ -176,7 +176,7 @@ func (a *HoldingsApiService) ListHoldingsByAccount(ctx context.Context, accountG
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/vnd.mx.atrium.v1+json"}
+	localVarHttpHeaderAccepts := []string{"application/vnd.mx.api.v1+json"}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -259,9 +259,9 @@ func (a *HoldingsApiService) ListHoldingsByAccount(ctx context.Context, accountG
 /*
 HoldingsApiService List holdings by member
 Use this endpoint to read all holdings associated with a specific member.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param memberGUID The unique identifier for a &#x60;member&#x60;.
- * @param userGUID The unique identifier for a &#x60;user&#x60;.
+  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param memberGUID The unique identifier for a &#x60;member&#x60;.
+  - @param userGUID The unique identifier for a &#x60;user&#x60;.
 
 @return HoldingsResponseBody
 */
@@ -293,7 +293,7 @@ func (a *HoldingsApiService) ListHoldingsByMember(ctx context.Context, memberGUI
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/vnd.mx.atrium.v1+json"}
+	localVarHttpHeaderAccepts := []string{"application/vnd.mx.api.v1+json"}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -376,9 +376,9 @@ func (a *HoldingsApiService) ListHoldingsByMember(ctx context.Context, memberGUI
 /*
 HoldingsApiService Read holding
 Use this endpoint to read the attributes of a specific holding.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param holdingGUID The unique identifier for a &#x60;holding&#x60;.
- * @param userGUID The unique identifier for a &#x60;user&#x60;.
+  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param holdingGUID The unique identifier for a &#x60;holding&#x60;.
+  - @param userGUID The unique identifier for a &#x60;user&#x60;.
 
 @return HoldingResponseBody
 */
@@ -410,7 +410,7 @@ func (a *HoldingsApiService) ReadHolding(ctx context.Context, holdingGUID string
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/vnd.mx.atrium.v1+json"}
+	localVarHttpHeaderAccepts := []string{"application/vnd.mx.api.v1+json"}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)

@@ -27,9 +27,9 @@ type ConnectWidgetApiService service
 /*
 ConnectWidgetApiService Embedding in a website
 This endpoint will return a URL for an embeddable version of MX Connect.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param userGUID The unique identifier for a &#x60;user&#x60;.
- * @param body Optional config options for WebView (is_mobile_webview, current_institution_code, current_member_guid, update_credentials)
+  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param userGUID The unique identifier for a &#x60;user&#x60;.
+  - @param body Optional config options for WebView (is_mobile_webview, current_institution_code, current_member_guid, update_credentials)
 
 @return ConnectWidgetResponseBody
 */
@@ -60,7 +60,7 @@ func (a *ConnectWidgetApiService) GetConnectWidget(ctx context.Context, userGUID
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/vnd.mx.atrium.v1+json"}
+	localVarHttpHeaderAccepts := []string{"application/vnd.mx.api.v1+json"}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)

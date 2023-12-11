@@ -98,7 +98,7 @@ func (a *InstitutionsApiService) ListInstitutions(ctx context.Context, localVarO
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/vnd.mx.atrium.v1+json"}
+	localVarHttpHeaderAccepts := []string{"application/vnd.mx.api.v1+json"}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -181,8 +181,8 @@ func (a *InstitutionsApiService) ListInstitutions(ctx context.Context, localVarO
 /*
 InstitutionsApiService Read institution
 This endpoint allows you to see information for a specific institution.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param institutionCode The institution_code of the institution.
+  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param institutionCode The institution_code of the institution.
 
 @return InstitutionResponseBody
 */
@@ -213,7 +213,7 @@ func (a *InstitutionsApiService) ReadInstitution(ctx context.Context, institutio
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/vnd.mx.atrium.v1+json"}
+	localVarHttpHeaderAccepts := []string{"application/vnd.mx.api.v1+json"}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -296,8 +296,8 @@ func (a *InstitutionsApiService) ReadInstitution(ctx context.Context, institutio
 /*
 InstitutionsApiService Read institution credentials
 Use this endpoint to see which credentials will be needed to create a member for a specific institution.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param institutionCode The institution_code of the institution.
+  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param institutionCode The institution_code of the institution.
 
 @return CredentialsResponseBody
 */
@@ -328,7 +328,7 @@ func (a *InstitutionsApiService) ReadInstitutionCredentials(ctx context.Context,
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/vnd.mx.atrium.v1+json"}
+	localVarHttpHeaderAccepts := []string{"application/vnd.mx.api.v1+json"}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)

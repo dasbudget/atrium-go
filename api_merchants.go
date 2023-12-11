@@ -27,8 +27,8 @@ type MerchantsApiService service
 /*
 MerchantsApiService List merchant locations
 Returns a list of all the merchant locations associated with a merchant, including physical location, latitude, longitude, etc.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param merchantGUID The unique identifier for a &#x60;merchant&#x60;.
+  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param merchantGUID The unique identifier for a &#x60;merchant&#x60;.
 
 @return MerchantLocationsResponseBody
 */
@@ -59,7 +59,7 @@ func (a *MerchantsApiService) ListMerchantLocations(ctx context.Context, merchan
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/vnd.mx.atrium.v1+json"}
+	localVarHttpHeaderAccepts := []string{"application/vnd.mx.api.v1+json"}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -142,7 +142,7 @@ func (a *MerchantsApiService) ListMerchantLocations(ctx context.Context, merchan
 /*
 MerchantsApiService List merchants
 Returns a list of merchnants.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 
 @return MerchantsResponseBody
 */
@@ -172,7 +172,7 @@ func (a *MerchantsApiService) ListMerchants(ctx context.Context) (MerchantsRespo
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/vnd.mx.atrium.v1+json"}
+	localVarHttpHeaderAccepts := []string{"application/vnd.mx.api.v1+json"}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -255,8 +255,8 @@ func (a *MerchantsApiService) ListMerchants(ctx context.Context) (MerchantsRespo
 /*
 MerchantsApiService Read merchant
 Returns information about a particular merchant, such as a logo, name, and website.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param merchantGUID The unique identifier for a &#x60;merchant&#x60;.
+  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param merchantGUID The unique identifier for a &#x60;merchant&#x60;.
 
 @return MerchantResponseBody
 */
@@ -287,7 +287,7 @@ func (a *MerchantsApiService) ReadMerchant(ctx context.Context, merchantGUID str
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/vnd.mx.atrium.v1+json"}
+	localVarHttpHeaderAccepts := []string{"application/vnd.mx.api.v1+json"}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
@@ -370,9 +370,9 @@ func (a *MerchantsApiService) ReadMerchant(ctx context.Context, merchantGUID str
 /*
 MerchantsApiService Read merchant location
 Retuns a specific location associated with a merchant, including physical location, latitude, longitude, etc.
- * @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param merchantGUID The unique identifier for a &#x60;merchant&#x60;.
- * @param merchantLocationGUID The unique identifier for a &#x60;merchant_location&#x60;.
+  - @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+  - @param merchantGUID The unique identifier for a &#x60;merchant&#x60;.
+  - @param merchantLocationGUID The unique identifier for a &#x60;merchant_location&#x60;.
 
 @return MerchantLocationResponseBody
 */
@@ -404,7 +404,7 @@ func (a *MerchantsApiService) ReadMerchantLocation(ctx context.Context, merchant
 	}
 
 	// to determine the Accept header
-	localVarHttpHeaderAccepts := []string{"application/vnd.mx.atrium.v1+json"}
+	localVarHttpHeaderAccepts := []string{"application/vnd.mx.api.v1+json"}
 
 	// set Accept header
 	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
